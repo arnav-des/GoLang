@@ -1,0 +1,13 @@
+oroutine 1:
+
+func incrementCounter() {
+    counter++
+}
+
+Goroutine 2:
+
+func printCounter() {
+    fmt.Printf("Counter value: %d", counter)
+}
+
+The race condition occurs when both goroutines run simultaneously. Goroutine 1 will increment the counter, while Goroutine 2 will attempt to print the current value of the counter. Depending on which goroutine runs first, the value printed by Goroutine 2 will not be the value that was set by Goroutine 1. This is because Goroutine 2 may read the value of the counter before Goroutine 1 has had a chance to increment it.
